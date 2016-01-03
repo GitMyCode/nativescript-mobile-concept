@@ -1,11 +1,12 @@
 {
-	"nativescript": {
-		"id": "org.nativescript.maquette",
-		"tns-android": {
-			"version": "1.5.1"
-		}
-	},
-	"dependencies": {
-		"tns-core-modules": "1.5.1"
-	}
+  "nativescript": {
+    "id": "org.nativescript.maquette",
+    "tns-android": {
+      "version": "1.5.1"
+    }
+  },
+  "dependencies": {
+    "nativescript-liveedit": "^1.5.3",
+    "tns-core-modules": "1.5.1"
+  }
 }
