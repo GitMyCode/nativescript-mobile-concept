@@ -1,0 +1,5 @@
+<Page loaded="onPageLoaded">
+  <StackLayout>
+    <Button text="Login dfd df" tap="login"/>
+  </StackLayout>
+</Page>
