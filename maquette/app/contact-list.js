@@ -1,19 +1,49 @@
 var observableModule = require("data/observable");
 var observableArray = require("data/observable-array");
 var viewModule = require("ui/core/view");
+var fs = require("file-system");
+var documents = fs.knownFolders.documents();
+var testPath = "///test.txt";
+// Get a normalized path such as <folder.path>/test.txt from <folder.path>///test.txt
+var normalizedPath = fs.path.normalize(documents.path + testPath);
+var myFile = documents.getFile("test.txt");
 
-var tasks = new observableArray.ObservableArray([]);
+var contacts = new observableArray.ObservableArray([]);
 var pageData = new observableModule.Observable();
 var page;
 
+var loadContact = function(){
+  myFile.readText()
+      .then(function (content) {
+        var allLine = content.split("\n");
+        allLine.forEach(function(line){
+          console.log(line);
+          contacts.push({name: line});
+        });
+  }, function (error) {
+    console.log(error);
+  });
+};
+
+var saveContact = function(){
+  var text = "";
+  contacts.forEach(function(contact){
+    text += contact.name + "\n";
+  });
+  myFile.writeText(text);
+};
+
 exports.onPageLoaded = function(args){
   page = args.object;
-  pageData.set("task", "");
-  pageData.set("tasks", tasks);
+  loadContact();
+  pageData.set("contact", "");
+
+  pageData.set("contacts", contacts);
   page.bindingContext = pageData;
 };
 
 exports.add = function(){
-  tasks.push({ name: pageData.get("task")});
-  //viewModule.getViewById(page, "task").dismissSoftInput();
+  contacts.push({ name: pageData.get("contact")});
+  saveContact();
+  //viewModule.getViewById(page, "contact").dismissSoftInput();
 };

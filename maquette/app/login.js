@@ -8,6 +8,6 @@ exports.onPageLoaded = function(args){
 };
 
 exports.login = function(){
-  console.log("sdfsdf");
+  console.log("Go to contact page");
   frameModule.topmost().navigate("contact-list");
 };
