@@ -1,11 +1,9 @@
 var observableModule = require("data/observable");
 var observableArray = require("data/observable-array");
+var frameModule = require("ui/frame");
 var viewModule = require("ui/core/view");
 var fs = require("file-system");
 var documents = fs.knownFolders.documents();
-var testPath = "///test.txt";
-// Get a normalized path such as <folder.path>/test.txt from <folder.path>///test.txt
-var normalizedPath = fs.path.normalize(documents.path + testPath);
 var myFile = documents.getFile("test.txt");
 
 var contacts = new observableArray.ObservableArray([]);
@@ -35,15 +33,17 @@ var saveContact = function(){
 
 exports.onPageLoaded = function(args){
   page = args.object;
+  contacts.set([]);
   loadContact();
   pageData.set("contact", "");
-
   pageData.set("contacts", contacts);
   page.bindingContext = pageData;
 };
 
 exports.add = function(){
-  contacts.push({ name: pageData.get("contact")});
-  saveContact();
+  console.log("Go to contact page");
+  frameModule.topmost().navigate("contact-add");
+  // contacts.push({ name: pageData.get("contact")});
+  // saveContact();
   //viewModule.getViewById(page, "contact").dismissSoftInput();
 };

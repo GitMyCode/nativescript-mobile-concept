@@ -1,0 +1,8 @@
+<Page loaded="onPageLoaded">
+  <GridLayout rows="auto, *">
+    <StackLayout orientation="vertical" col="1">
+      <TextField width="200" text="{{ contactName }}" hint="enter something" id="contact"/>
+      <Button text="Save" tap="save"></Button>
+    </StackLayout>
+  </GridLayout>
+</Page>
