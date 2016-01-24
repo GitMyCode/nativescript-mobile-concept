@@ -2,6 +2,7 @@
   <GridLayout rows="auto, *">
     <StackLayout orientation="vertical" col="1">
       <TextField width="200" text="{{ contactName }}" hint="enter something" id="contact"/>
+      <ListPicker width="200" items="{{ items }}" />
       <Button text="Save" tap="save"></Button>
     </StackLayout>
   </GridLayout>

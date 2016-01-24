@@ -1,5 +1,16 @@
-<Page loaded="onPageLoaded">
-  <StackLayout>
-    <Button text="Login dfd df" tap="login"/>
-  </StackLayout>
+<Page loaded="onPageLoaded" cssClass="login-page">
+  <GridLayout cssClass="login-page">
+
+    <StackLayout>
+      <Image src="res://logo" cssClass="logo" stretch="none"/>
+      <Label text="{{ strings.loginMessage }}" margin="8 16 16 16" cssClass="header"/>
+      <TextField text="{{ username }}" hint="username" autocapitalizationType="none" autocorrect="false"/>
+      <Border cssClass="textFieldBorder"/>
+      <TextField text="{{ password }}" secure="true" hint="password"/>
+      <Border cssClass="textFieldBorder"/>
+
+      <Button text="Login" cssClass="login-button" tap="login"/>
+    </StackLayout>
+
+  </GridLayout>
 </Page>

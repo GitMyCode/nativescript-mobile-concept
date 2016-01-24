@@ -3,14 +3,28 @@
     horizontal-align: center;
     margin: 20;
 }
-
 button {
     font-size: 42;
     horizontal-align: center;
 }
-
+.login-page{
+  background-color: #353d3f;
+  padding: 8 16 8 16;
+}
+.login-button{
+  margin: 40;
+  background-color: #cfdd26;
+}
 .message {
     font-size: 20;
     color: #284848;
     horizontal-align: center;
+}
+.header {
+    font-size: 26;
+    margin: 8 16 0 16;
+}
+.logo {
+    horizontal-align: center;
+    margin-top: 40
 }

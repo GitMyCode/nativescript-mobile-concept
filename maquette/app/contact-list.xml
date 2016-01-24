@@ -1,6 +1,7 @@
 <Page loaded="onPageLoaded">
   <GridLayout rows="auto, *">
       <StackLayout orientation="horizontal" row="0">
+        <TextField width="200" text="{{ contact }}" hint="enter something" id="contact"/>
         <Button text="add" tap="add"></Button>
       </StackLayout>
 
