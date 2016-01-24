@@ -1,0 +1,6 @@
+<StackLayout cssClass="input-container">
+  <Label text="Contact name" cssClass="input-label"/>
+  <GridLayout columns="*, auto" cssClass="inner-container">
+    <TextField text="{{ contactName }}"  id="contact-name"/>
+  </GridLayout>
+</StackLayout>

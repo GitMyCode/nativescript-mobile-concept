@@ -15,6 +15,17 @@ button {
   margin: 40;
   background-color: #cfdd26;
 }
+.input-container {
+    margin: 10 4 0 16;
+}
+.inner-container{
+  margin-top: -10;
+  margin-left: -4;
+}
+.input-label {
+    color: #8F8F8F;
+    font-size: 14;
+}
 .message {
     font-size: 20;
     color: #284848;
@@ -27,4 +38,11 @@ button {
 .logo {
     horizontal-align: center;
     margin-top: 40
+}
+.edit-contact-country-container {
+    padding: 16 16 16 20;
+}
+.list-picker{
+  padding-top: -40;
+  margin-top: -40;
 }

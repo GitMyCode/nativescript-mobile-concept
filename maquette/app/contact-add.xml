@@ -1,8 +1,37 @@
 <Page loaded="onPageLoaded">
   <GridLayout rows="auto, *">
     <StackLayout orientation="vertical" col="1">
-      <TextField width="200" text="{{ contactName }}" hint="enter something" id="contact"/>
-      <ListPicker width="200" items="{{ items }}" />
+      <StackLayout cssClass="input-container">
+        <Label text="first name" cssClass="input-label"/>
+        <GridLayout columns="*, auto" cssClass="inner-container">
+          <TextField text="{{ contactName }}" id="contact-name"/>
+        </GridLayout>
+      </StackLayout>
+      <StackLayout cssClass="input-container">
+        <Label text="last name" cssClass="input-label"/>
+        <GridLayout columns="*, auto" cssClass="inner-container">
+          <TextField text="{{ contactLastName }}" id="contactLastName"/>
+        </GridLayout>
+      </StackLayout>
+
+      <StackLayout cssClass="input-container">
+        <Label text="Adress" cssClass="input-label"/>
+        <GridLayout columns="*, auto" cssClass="inner-container">
+          <TextField text="{{ contactAdress }}" id="contactAdress"/>
+        </GridLayout>
+      </StackLayout>
+
+      <GridLayout columns="2*,2*" cssClass="edit-contact-country-container detailsContainer">
+        <StackLayout col="0">
+          <Label text="Country" cssClass="input-label"/>
+          <ListPicker cssClass="list-picker" items="{{ items }}"/>
+        </StackLayout>
+        <StackLayout col="2" margin="0 4 0 16">
+          <Label text="State" cssClass="input-label"/>
+          <ListPicker cssClass="list-picker" items="{{ items }}"/>
+        </StackLayout>
+      </GridLayout>
+
       <Button text="Save" tap="save"></Button>
     </StackLayout>
   </GridLayout>
