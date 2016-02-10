@@ -7,7 +7,7 @@
 
       <ListView items="{{ contacts }}" row="1">
         <ListView.itemTemplate>
-          <Label text="{{ name }}"/>
+          <Label text="{{ firstName }}"/>
         </ListView.itemTemplate>
       </ListView>
   </GridLayout>

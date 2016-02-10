@@ -46,3 +46,9 @@ button {
   padding-top: -40;
   margin-top: -40;
 }
+.upload-picture-button{
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #cfdd26;
+  font-size: 14;
+}

@@ -1,38 +1,54 @@
 <Page loaded="onPageLoaded">
-  <GridLayout rows="auto, *">
-    <StackLayout orientation="vertical" col="1">
-      <StackLayout cssClass="input-container">
-        <Label text="first name" cssClass="input-label"/>
-        <GridLayout columns="*, auto" cssClass="inner-container">
-          <TextField text="{{ contactName }}" id="contact-name"/>
-        </GridLayout>
-      </StackLayout>
-      <StackLayout cssClass="input-container">
-        <Label text="last name" cssClass="input-label"/>
-        <GridLayout columns="*, auto" cssClass="inner-container">
-          <TextField text="{{ contactLastName }}" id="contactLastName"/>
-        </GridLayout>
-      </StackLayout>
+  <GridLayout rows="*, auto">
+    <ScrollView>
+      <GridLayout rows="auto, auto, auto, auto, auto, auto, auto, auto">
+        <StackLayout orientation="vertical" col="1">
+          <StackLayout cssClass="input-container">
+            <Label text="first name" cssClass="input-label"/>
+            <GridLayout columns="*, auto" cssClass="inner-container">
+              <TextField text="{{ contactFirstName }}" id="contact-name"/>
+            </GridLayout>
+          </StackLayout>
+          <StackLayout cssClass="input-container">
+            <Label text="last name" cssClass="input-label"/>
+            <GridLayout columns="*, auto" cssClass="inner-container">
+              <TextField text="{{ contactLastName }}" id="contactLastName"/>
+            </GridLayout>
+          </StackLayout>
 
-      <StackLayout cssClass="input-container">
-        <Label text="Adress" cssClass="input-label"/>
-        <GridLayout columns="*, auto" cssClass="inner-container">
-          <TextField text="{{ contactAdress }}" id="contactAdress"/>
-        </GridLayout>
-      </StackLayout>
+          <StackLayout cssClass="input-container">
+            <Label text="Address" cssClass="input-label"/>
+            <GridLayout columns="*, auto" cssClass="inner-container">
+              <TextField text="{{ contactAddress }}" id="contactAddress"/>
+            </GridLayout>
+          </StackLayout>
 
-      <GridLayout columns="2*,2*" cssClass="edit-contact-country-container detailsContainer">
-        <StackLayout col="0">
-          <Label text="Country" cssClass="input-label"/>
-          <ListPicker cssClass="list-picker" items="{{ items }}"/>
-        </StackLayout>
-        <StackLayout col="2" margin="0 4 0 16">
-          <Label text="State" cssClass="input-label"/>
-          <ListPicker cssClass="list-picker" items="{{ items }}"/>
+          <GridLayout columns="2*,2*" cssClass="edit-contact-country-container detailsContainer">
+            <StackLayout col="0">
+              <Label text="Country" cssClass="input-label"/>
+              <ListPicker cssClass="list-picker" items="{{ items }}"/>
+            </StackLayout>
+            <StackLayout col="2" margin="0 4 0 16">
+              <Label text="State" cssClass="input-label"/>
+              <ListPicker cssClass="list-picker" items="{{ items }}"/>
+            </StackLayout>
+          </GridLayout>
+          <!-- <GridLayout row="3" cssClass="detailsContainer" padding="8 16 8 16" columns="auto, *, auto" tap="takePictureButtonTap" >
+        <Image src="res://ic_photo" cssClass="detailsIcon" stretch="none"/>
+        <Label text="Tap to add photo" col="1" margin="0 0 0 4" />
+        <Image col="2" stretch="fill" src="{{ picture }}" visibility="{{ picture ? 'visible' : 'collapsed' }}" cssClass="picturePreview" />
+      </GridLayout> -->
+          <StackLayout cssClass="input-container">
+            <Label text="Phones" cssClass="input-label"/>
+            <GridLayout columns="*, auto" cssClass="inner-container">
+              <TextField text="{{ contactPhone }}" id="contactPhone"/>
+            </GridLayout>
+          </StackLayout>
+
+          <Button text="UPLOAD PROFILE PICTURE" class="upload-picture-button" tap="takePicture"></Button>
+          <Button text="Save" tap="save"></Button>
         </StackLayout>
       </GridLayout>
-
-      <Button text="Save" tap="save"></Button>
-    </StackLayout>
+    </ScrollView>
   </GridLayout>
 </Page>
